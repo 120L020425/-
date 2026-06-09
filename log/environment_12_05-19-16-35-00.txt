@@ -1,0 +1,199 @@
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None
+- living_room: type=room, state=None
+- tv: type=device, state=on
+- table: type=furniture, state=None
+- water_cup: type=container, state=full
+- kettle: type=container, state=full
+- water: type=drink, state=None
+- coffee_table: type=furniture, state=None
+- bookshelf: type=furniture, state=None
+- book: type=book, state=None
+- trash_can: type=container, state=None
+- kitchen: type=room, state=None
+- refrigerator: type=appliance, state=closed
+- cola_bottle: type=disposable_container, state=full
+- cola: type=drink, state=None
+- dining_table: type=furniture, state=None
+- orange: type=fruit, state=None
+- apple: type=fruit, state=None
+- fruit_plate: type=container, state=filled
+- wine: type=drinks, state=None
+- kitchen_table: type=furniture, state=None
+- drawer: type=furniture, state=opened
+- jam: type=food, state=None
+- microwave_oven: type=appliance, state=closed
+- pot: type=container, state=None
+- oat: type=breakfast_food, state=None
+- bowl: type=container, state=empty
+- milk: type=drink, state=None
+- dishwasher_sink: type=container, state=None
+- bed_room: type=room, state=None
+- bed: type=furniture, state=None
+
+Subgraph Scene Relations:
+- (living_room) --holds--> (table)
+- (living_room) --holds--> (trash_can)
+- (living_room) --holds--> (bookshelf)
+- (living_room) --holds--> (coffee_table)
+- (living_room) --holds--> (tv)
+- (tv) --in_or_on--> (living_room)
+- (table) --in_or_on--> (living_room)
+- (table) --holds--> (water_cup)
+- (table) --holds--> (kettle)
+- (water_cup) --in_or_on--> (table)
+- (water_cup) --holds--> (water)
+- (kettle) --in_or_on--> (table)
+- (kettle) --holds--> (water)
+- (water) --in_or_on--> (water_cup)
+- (water) --in_or_on--> (kettle)
+- (coffee_table) --in_or_on--> (living_room)
+- (bookshelf) --in_or_on--> (living_room)
+- (bookshelf) --holds--> (book)
+- (book) --in_or_on--> (bookshelf)
+- (trash_can) --in_or_on--> (living_room)
+- (kitchen) --holds--> (dining_table)
+- (kitchen) --holds--> (kitchen_table)
+- (kitchen) --holds--> (refrigerator)
+- (refrigerator) --in_or_on--> (kitchen)
+- (refrigerator) --holds--> (wine)
+- (refrigerator) --holds--> (cola_bottle)
+- (refrigerator) --holds--> (milk)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola_bottle) --holds--> (cola)
+- (cola) --in_or_on--> (cola_bottle)
+- (dining_table) --in_or_on--> (kitchen)
+- (dining_table) --holds--> (fruit_plate)
+- (orange) --in_or_on--> (fruit_plate)
+- (apple) --in_or_on--> (fruit_plate)
+- (fruit_plate) --in_or_on--> (dining_table)
+- (fruit_plate) --holds--> (apple)
+- (fruit_plate) --holds--> (orange)
+- (wine) --in_or_on--> (refrigerator)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (kitchen_table) --holds--> (oat)
+- (kitchen_table) --holds--> (dishwasher_sink)
+- (kitchen_table) --holds--> (drawer)
+- (kitchen_table) --holds--> (jam)
+- (kitchen_table) --holds--> (microwave_oven)
+- (kitchen_table) --holds--> (pot)
+- (kitchen_table) --holds--> (bowl)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (kitchen_table)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (pot) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+- (milk) --in_or_on--> (refrigerator)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+- (bed_room) --holds--> (bed)
+- (bed) --in_or_on--> (bed_room)
+
+Matched Object Knowledge:
+- None
+05-19-16-35-22
+{
+  "Robo_intention": "Robo intends to have breakfast (prepare oats). He wants a bowl with oat and milk prepared and handed to him.",
+  "Roco_action": [
+    "walk_to kitchen_table",
+    "take oat from kitchen_table",
+    "pour oat bowl 50g",
+    "put oat kitchen_table",
+    "walk_to refrigerator",
+    "open refrigerator",
+    "take milk from refrigerator",
+    "pour milk bowl 200ml",
+    "put milk refrigerator",
+    "close refrigerator",
+    "walk_to kitchen_table",
+    "take bowl from kitchen_table",
+    "walk_to Robo",
+    "put bowl Robo"
+  ]
+}
+05-19-16-35-22
+⚠️ Command 3: Command format is unknown or not supported (pour oat bowl 50g).
+05-19-16-35-39
+{
+  "Robo_intention": "Robo wants a prepared bowl of oats with milk (serve bowl with oat and milk).",
+  "Roco_action": [
+    "walk_to kitchen_table",
+    "take oat from kitchen_table",
+    "pour oat bowl 50g",
+    "put oat kitchen_table",
+    "open refrigerator",
+    "take milk from refrigerator",
+    "pour milk bowl 200ml",
+    "put milk refrigerator",
+    "close refrigerator",
+    "take bowl from kitchen_table",
+    "walk_to Robo",
+    "put bowl Robo"
+  ]
+}
+05-19-16-35-39
+⚠️ Command 3: Command format is unknown or not supported (pour oat bowl 50g).
+05-19-16-35-59
+{
+  "Robo_intention": "Robo intends to have a bowl of oats with milk (prepare cereal) and receive the bowl.",
+  "Roco_action": [
+    "walk_to kitchen_table",
+    "take oat from kitchen_table",
+    "pour oat bowl 50 g",
+    "put oat kitchen_table",
+    "walk_to refrigerator",
+    "open refrigerator",
+    "take milk from refrigerator",
+    "pour milk bowl 200 ml",
+    "put milk refrigerator",
+    "close refrigerator",
+    "take bowl from kitchen_table",
+    "walk_to Robo",
+    "put bowl Robo"
+  ]
+}
+05-19-16-35-59
+⚠️ Command 3: Command format is unknown or not supported (pour oat bowl 50 g).
+05-19-16-36-13
+{
+  "Robo_intention": "Robo wants a bowl of oats with milk (prepare oat bowl) and have it brought to Robo.",
+  "Roco_action": [
+    "walk_to kitchen_table",
+    "take oat from kitchen_table",
+    "pour oat bowl 50g",
+    "put oat kitchen_table",
+    "walk_to refrigerator",
+    "open refrigerator",
+    "take milk from refrigerator",
+    "pour milk bowl 200ml",
+    "put milk refrigerator",
+    "close refrigerator",
+    "walk_to kitchen_table",
+    "take bowl from kitchen_table",
+    "walk_to Robo",
+    "put bowl Robo"
+  ]
+}
+05-19-16-36-13
+⚠️ Command 3: Command format is unknown or not supported (pour oat bowl 50g).
+05-19-16-36-31
+{
+  "Robo_intention": "Robo intends to have a prepared bowl of oats with milk (prepare breakfast).",
+  "Roco_action": [
+    "walk_to kitchen_table",
+    "take oat from kitchen_table",
+    "put oat bowl",
+    "walk_to refrigerator",
+    "open refrigerator",
+    "take milk from refrigerator",
+    "pour milk bowl 200ml",
+    "put milk refrigerator",
+    "close refrigerator",
+    "walk_to kitchen_table",
+    "take bowl from kitchen_table",
+    "walk_to Robo",
+    "put bowl Robo"
+  ]
+}
+05-19-16-36-31
+succeed

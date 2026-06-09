@@ -1,0 +1,118 @@
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None
+- corridor: type=room, state=None
+- cabinet_table: type=furniture, state=None
+- cabinet_drawer: type=furniture, state=closed
+- knife: type=object, state=None
+- door: type=furniture, state=closed
+- parcel: type=object, state=None
+- living_room: type=room, state=None
+- tv: type=device, state=on
+- table: type=furniture, state=None
+- water_cup: type=container, state=full
+- kettle: type=container, state=full
+- water: type=drink, state=None
+- coffee_table: type=furniture, state=None
+- bookshelf: type=furniture, state=None
+- book: type=book, state=None
+- trash_can: type=container, state=None
+- kitchen: type=room, state=None
+- refrigerator: type=appliance, state=closed
+- cola_bottle: type=disposable_container, state=full
+- cola: type=drink, state=None
+- dining_table: type=furniture, state=None
+- orange: type=fruit, state=None
+- apple: type=fruit, state=None
+- fruit_plate: type=container, state=filled
+- wine: type=drinks, state=None
+- kitchen_table: type=furniture, state=None
+- drawer: type=furniture, state=closed
+- jam: type=food, state=None
+- microwave_oven: type=appliance, state=closed
+- pot: type=container, state=None
+- oat: type=breakfast_food, state=None
+- bowl: type=container, state=empty
+- milk: type=drink, state=None
+- dishwasher_sink: type=container, state=None
+- bed_room: type=room, state=None
+- bed: type=furniture, state=None
+
+Subgraph Scene Relations:
+- (corridor) --holds--> (door)
+- (corridor) --holds--> (parcel)
+- (corridor) --holds--> (cabinet)
+- (cabinet_table) --in_or_on--> (corridor)
+- (cabinet_table) --holds--> (knife)
+- (cabinet_table) --holds--> (cabinet_drawer)
+- (cabinet_drawer) --in_or_on--> (cabinet_table)
+- (knife) --in_or_on--> (cabinet_table)
+- (door) --in_or_on--> (corridor)
+- (parcel) --in_or_on--> (corridor)
+- (living_room) --holds--> (table)
+- (living_room) --holds--> (trash_can)
+- (living_room) --holds--> (bookshelf)
+- (living_room) --holds--> (coffee_table)
+- (living_room) --holds--> (tv)
+- (tv) --in_or_on--> (living_room)
+- (table) --in_or_on--> (living_room)
+- (table) --holds--> (water_cup)
+- (table) --holds--> (kettle)
+- (water_cup) --in_or_on--> (table)
+- (water_cup) --holds--> (water)
+- (kettle) --in_or_on--> (table)
+- (kettle) --holds--> (water)
+- (water) --in_or_on--> (water_cup)
+- (water) --in_or_on--> (kettle)
+- (coffee_table) --in_or_on--> (living_room)
+- (bookshelf) --in_or_on--> (living_room)
+- (bookshelf) --holds--> (book)
+- (book) --in_or_on--> (bookshelf)
+- (trash_can) --in_or_on--> (living_room)
+- (kitchen) --holds--> (dining_table)
+- (kitchen) --holds--> (kitchen_table)
+- (kitchen) --holds--> (refrigerator)
+- (refrigerator) --in_or_on--> (kitchen)
+- (refrigerator) --holds--> (wine)
+- (refrigerator) --holds--> (cola_bottle)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola_bottle) --holds--> (cola)
+- (cola) --in_or_on--> (cola_bottle)
+- (dining_table) --in_or_on--> (kitchen)
+- (dining_table) --holds--> (fruit_plate)
+- (orange) --in_or_on--> (fruit_plate)
+- (apple) --in_or_on--> (fruit_plate)
+- (fruit_plate) --in_or_on--> (dining_table)
+- (fruit_plate) --holds--> (apple)
+- (fruit_plate) --holds--> (orange)
+- (wine) --in_or_on--> (refrigerator)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (kitchen_table) --holds--> (oat)
+- (kitchen_table) --holds--> (milk)
+- (kitchen_table) --holds--> (dishwasher_sink)
+- (kitchen_table) --holds--> (drawer)
+- (drawer) --in_or_on--> (kitchen_table)
+- (drawer) --holds--> (jam)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (pot) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+- (milk) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+- (bed_room) --holds--> (bed)
+- (bed) --in_or_on--> (bed_room)
+
+Matched Object Knowledge:
+- None
+05-19-16-34-45
+{
+  "Robo_intention": "Robo (person in green) intends to pick up the parcel on the floor in the corridor and have it handed to them.",
+  "Roco_action": [
+    "walk_to corridor",
+    "take parcel from corridor",
+    "walk_to Robo",
+    "put parcel Robo"
+  ]
+}
+05-19-16-34-45
+succeed

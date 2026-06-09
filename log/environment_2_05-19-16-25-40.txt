@@ -1,0 +1,71 @@
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None
+- living_room: type=room, state=None
+- table: type=furniture, state=None
+- trash_bin: type=container, state=None
+- cola_bottle: type=disposable_container, state=empty
+- kitchen: type=room, state=None
+- refrigerator: type=furniture, state=closed
+- dining_table: type=furniture, state=None
+- orange: type=fruit, state=None
+- apple: type=fruit, state=None
+- fruit_plate: type=container, state=filled
+- wine: type=drinks, state=None
+- kitchen_table: type=furniture, state=None
+- drawer: type=furniture, state=closed
+- jam: type=food, state=None
+- microwave_oven: type=furniture, state=closed
+- pot: type=container, state=None
+- oat: type=food, state=None
+- milk: type=drinks, state=None
+- dishwasher_sink: type=container, state=None
+
+Subgraph Scene Relations:
+- (living_room) --holds--> (table)
+- (living_room) --holds--> (trash_bin)
+- (table) --in_or_on--> (living_room)
+- (table) --holds--> (cola_bottle)
+- (trash_bin) --in_or_on--> (living_room)
+- (cola_bottle) --in_or_on--> (table)
+- (kitchen) --holds--> (dining_table)
+- (kitchen) --holds--> (kitchen_table)
+- (kitchen) --holds--> (refrigerator)
+- (refrigerator) --in_or_on--> (kitchen)
+- (refrigerator) --holds--> (wine)
+- (dining_table) --in_or_on--> (kitchen)
+- (dining_table) --holds--> (fruit_plate)
+- (orange) --in_or_on--> (fruit_plate)
+- (apple) --in_or_on--> (fruit_plate)
+- (fruit_plate) --in_or_on--> (dining_table)
+- (fruit_plate) --holds--> (apple)
+- (fruit_plate) --holds--> (orange)
+- (wine) --in_or_on--> (refrigerator)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (kitchen_table) --holds--> (oat)
+- (kitchen_table) --holds--> (milk)
+- (kitchen_table) --holds--> (dishwasher_sink)
+- (kitchen_table) --holds--> (drawer)
+- (drawer) --in_or_on--> (kitchen_table)
+- (drawer) --holds--> (jam)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (pot) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (milk) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+
+Matched Object Knowledge:
+- None
+05-19-16-25-59
+{
+  "Robo_intention": "Robo stood up from the couch after sitting near an empty cola_bottle on the table and walked toward the hallway. Robo likely intends to discard the empty cola_bottle into the living_room trash_bin.",
+  "Roco_action": [
+    "walk_to table",
+    "take cola_bottle from table",
+    "walk_to trash_bin",
+    "put cola_bottle trash_bin",
+    "walk_to Robo"
+  ]
+}
+05-19-16-25-59
+succeed

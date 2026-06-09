@@ -1,0 +1,84 @@
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None
+- fruit_plate: type=container, state=empty
+- living_room: type=room, state=None
+- tv: type=device, state=closed
+- table: type=furniture, state=None
+- water_cup: type=container, state=full
+- kettle: type=container, state=full
+- water: type=drink, state=None
+- coffee_table: type=furniture, state=None
+- bookshelf: type=furniture, state=None
+- book: type=book, state=None
+- trash_can: type=container, state=None
+- kitchen: type=room, state=None
+- refrigerator: type=appliance, state=closed
+- cola_bottle: type=disposable_container, state=full
+- cola: type=drink, state=None
+- dining_table: type=furniture, state=None
+- orange: type=fruit, state=None
+- apple: type=fruit, state=None
+- wine: type=drinks, state=None
+- kitchen_table: type=furniture, state=None
+- drawer: type=furniture, state=closed
+- jam: type=food, state=None
+- microwave_oven: type=appliance, state=closed
+- pot: type=container, state=None
+- oat: type=breakfast_food, state=None
+- bowl: type=container, state=empty
+- milk: type=drink, state=None
+- dishwasher_sink: type=container, state=None
+- bed_room: type=room, state=None
+- bed: type=furniture, state=None
+
+Subgraph Scene Relations:
+- (fruit_plate) --in_or_on--> (Robo)
+- (tv) --in_or_on--> (living_room)
+- (table) --in_or_on--> (living_room)
+- (water_cup) --in_or_on--> (table)
+- (kettle) --in_or_on--> (table)
+- (water) --in_or_on--> (water_cup)
+- (water) --in_or_on--> (kettle)
+- (coffee_table) --in_or_on--> (living_room)
+- (bookshelf) --in_or_on--> (living_room)
+- (book) --in_or_on--> (bookshelf)
+- (trash_can) --in_or_on--> (living_room)
+- (refrigerator) --in_or_on--> (kitchen)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola) --in_or_on--> (cola_bottle)
+- (dining_table) --in_or_on--> (kitchen)
+- (orange) --in_or_on--> (dining_table)
+- (apple) --in_or_on--> (dining_table)
+- (wine) --in_or_on--> (refrigerator)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (pot) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+- (milk) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+- (bed) --in_or_on--> (bed_room)
+
+Matched Object Knowledge:
+- None
+05-28-15-18-24
+{
+  "Robo_intention": "Robo intends to collect the fruits (orange and apple) from the dining_table into the fruit_plate and have the filled plate delivered to Robo.",
+  "Roco_action": [
+    "walk_to Robo",
+    "take fruit_plate from Robo",
+    "walk_to dining_table",
+    "put fruit_plate dining_table",
+    "take orange from dining_table",
+    "put orange fruit_plate",
+    "take apple from dining_table",
+    "put apple fruit_plate",
+    "take fruit_plate from dining_table",
+    "walk_to Robo",
+    "put fruit_plate Robo"
+  ]
+}
+05-28-15-18-24
+succeed

@@ -1,0 +1,102 @@
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None
+- corridor: type=room, state=None
+- cabinet_table: type=furniture, state=None
+- cabinet_drawer: type=furniture, state=closed
+- knife: type=object, state=None
+- door: type=furniture, state=closed
+- living_room: type=room, state=None
+- tv: type=device, state=closed
+- coffee_table: type=furniture, state=None
+- water_cup: type=container, state=full
+- kettle: type=container, state=full
+- water: type=drink, state=None
+- duck_toy: type=toy, state=None
+- low_bookshelf: type=furniture, state=None
+- bookshelf: type=furniture, state=None
+- book: type=book, state=None
+- trash_can: type=container, state=None
+- table: type=furniture, state=None
+- guest_1: type=people, state=None
+- guest_2: type=people, state=None
+- orange: type=fruit, state=None
+- apple: type=fruit, state=None
+- fruit_plate: type=container, state=filled
+- bowl_1: type=container, state=full
+- bowl_2: type=container, state=full
+- kitchen: type=room, state=None
+- refrigerator: type=appliance, state=closed
+- cola_bottle: type=disposable_container, state=full
+- cola: type=drink, state=None
+- dining_table: type=furniture, state=None
+- wine: type=drinks, state=None
+- kitchen_table: type=furniture, state=None
+- stove: type=furniture, state=running
+- pot_1: type=container, state=full
+- pot_2: type=container, state=empty
+- spoon: type=object, state=None
+- drawer: type=furniture, state=closed
+- jam: type=food, state=None
+- microwave_oven: type=appliance, state=closed
+- oat: type=breakfast_food, state=None
+- bowl: type=container, state=empty
+- dishwasher_sink: type=container, state=None
+- bed_room: type=room, state=None
+- bed: type=furniture, state=None
+
+Subgraph Scene Relations:
+- (cabinet_table) --in_or_on--> (corridor)
+- (cabinet_drawer) --in_or_on--> (cabinet_table)
+- (knife) --in_or_on--> (cabinet_table)
+- (door) --in_or_on--> (corridor)
+- (tv) --in_or_on--> (living_room)
+- (coffee_table) --in_or_on--> (living_room)
+- (water_cup) --in_or_on--> (coffee_table)
+- (kettle) --in_or_on--> (coffee_table)
+- (water) --in_or_on--> (water_cup)
+- (water) --in_or_on--> (kettle)
+- (duck_toy) --in_or_on--> (low_bookshelf)
+- (low_bookshelf) --in_or_on--> (living_room)
+- (bookshelf) --in_or_on--> (living_room)
+- (book) --in_or_on--> (bookshelf)
+- (trash_can) --in_or_on--> (living_room)
+- (table) --in_or_on--> (living_room)
+- (guest_1) --in_or_on--> (living_room)
+- (guest_2) --in_or_on--> (living_room)
+- (orange) --in_or_on--> (fruit_plate)
+- (apple) --in_or_on--> (fruit_plate)
+- (fruit_plate) --in_or_on--> (table)
+- (refrigerator) --in_or_on--> (kitchen)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola) --in_or_on--> (cola_bottle)
+- (dining_table) --in_or_on--> (kitchen)
+- (wine) --in_or_on--> (refrigerator)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (stove) --in_or_on--> (kitchen_table)
+- (pot_1) --in_or_on--> (kitchen_table)
+- (pot_2) --in_or_on--> (kitchen_table)
+- (spoon) --in_or_on--> (pot_2)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+- (bed) --in_or_on--> (bed_room)
+- (bowl_1) --in_or_on--> (table)
+- (bowl_2) --in_or_on--> (table)
+
+Matched Object Knowledge:
+- None
+05-20-18-05-02
+{
+  "Robo_intention": "Robo (the blue robot) is setting the table by placing bowls for guest_1 and guest_2. The goal is to prepare the dining_table for the guests (table setting), including providing a drink.",
+  "Roco_action": [
+    "walk_to coffee_table",
+    "take water_cup from coffee_table",
+    "walk_to dining_table",
+    "put water_cup dining_table"
+  ]
+}
+05-20-18-05-02
+succeed
