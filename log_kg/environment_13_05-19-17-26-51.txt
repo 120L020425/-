@@ -1,0 +1,58 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['pot', 'microwave_oven']
+recent_interaction_objects: ['microwave_oven', 'pot']
+state_changes: [['microwave_oven', 'state', 'opened']]
+
+Subgraph Object Summaries:
+- microwave_oven: type=appliance, state=opened, affordances=['openable', 'closeable']
+- pot: type=container, state=None, affordances=['contain_food', 'cook_food', 'transferable', 'needs_stirring_when_on_stove', 'needs_bowl_and_spoon_when_done']
+- Robo: type=Robo, state=None, affordances=[]
+- jam: type=food, state=None, affordances=['transferable', 'storable']
+- bowl: type=container, state=empty, affordances=['contain_food', 'serve_food', 'transferable', 'storable']
+- dishwasher_sink: type=container, state=None, affordances=[]
+- kitchen_table: type=furniture, state=None, affordances=[]
+- drawer: type=furniture, state=closed, affordances=['store_small_objects']
+- oat: type=breakfast_food, state=None, affordances=['edible', 'as_breakfast', 'transferable', 'serving_ready', 'storable']
+- kitchen: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (kitchen_table) --in_or_on--> (kitchen)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (pot) --in_or_on--> (microwave_oven)
+- (oat) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+
+Matched Object Knowledge:
+- (pot) --compatible_with--> (food)
+- (pot) --needs_spoon_to_stir_when_stove_running--> (spoon)
+- (pot) --needs_bowl_to_serve_when_stove_closed--> (bowl)
+- (pot) --can_be_cleaned_in--> (dishwasher_sink)
+- (pot) --can_be_placed_on--> (kitchen_table)
+- (pot) --can_be_heated_in--> (microwave_oven)
+- (jam) --can_be_stored_in--> (drawer)
+- (bowl) --compatible_with--> (food)
+- (bowl) --can_be_cleaned_in--> (dishwasher_sink)
+- (bowl) --can_be_stored_in--> (kitchen_table)
+- (bowl) --can_be_heated_in--> (microwave_oven)
+- (drawer) --can_store--> (jam)
+- (drawer) --can_store--> (cookie)
+
+05-19-17-27-08
+{
+  "Robo_intention": "Robo opened the microwave and is pointing at the pot inside; Robo wants the pot removed from the opened microwave (to place it on the table for serving or further handling).",
+  "Roco_action": [
+    "walk_to microwave_oven",
+    "take pot from microwave_oven",
+    "walk_to kitchen_table",
+    "put pot kitchen_table",
+    "walk_to microwave_oven",
+    "close microwave_oven"
+  ]
+}
+05-19-17-27-08
+succeed

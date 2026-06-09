@@ -1,0 +1,44 @@
+Human Cues:
+human_name: Robo
+human_holding: parcel
+pointing_target: []
+recent_interaction_objects: ['parcel', 'door']
+state_changes: []
+
+Subgraph Object Summaries:
+- parcel: type=object, state=None, affordances=['transferable', 'knife_openable']
+- Robo: type=Robo, state=None, affordances=[]
+- door: type=furniture, state=closed, affordances=['openable', 'closable', 'blocks_passage_when_closed']
+- outside_home: type=room, state=None, affordances=[]
+- corridor: type=room, state=None, affordances=[]
+- knife: type=object, state=None, affordances=[]
+- cabinet_table: type=furniture, state=None, affordances=[]
+- cabinet_drawer: type=furniture, state=closed, affordances=[]
+
+Subgraph Scene Relations:
+- (Robo) --in_or_on--> (outside_home)
+- (cabinet_table) --in_or_on--> (corridor)
+- (cabinet_drawer) --in_or_on--> (cabinet_table)
+- (knife) --in_or_on--> (cabinet_table)
+- (door) --in_or_on--> (corridor)
+- (parcel) --in_or_on--> (Robo)
+
+Matched Object Knowledge:
+- (parcel) --can_be_opened_by--> (knife)
+- (door) --blocks_passage_when_closed--> (outside_home)
+- (door) --must_be_opened_to_go_to--> (corridor)
+
+05-19-17-26-05
+{
+  "Robo_intention": "Robo is standing outside_home holding a parcel and needs to get into the corridor (where the cabinet_table and a knife are) to place or open the parcel. The closed door is blocking passage and a knife on the cabinet_table can open the parcel.",
+  "Roco_action": [
+    "walk_to door",
+    "open door",
+    "walk_to cabinet_table",
+    "take knife from cabinet_table",
+    "walk_to Robo",
+    "put knife Robo"
+  ]
+}
+05-19-17-26-05
+succeed

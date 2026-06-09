@@ -1,0 +1,37 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['paper_boat', 'trash_bin']
+recent_interaction_objects: ['paper_boat', 'trash_bin']
+state_changes: []
+
+Subgraph Object Summaries:
+- paper_boat: type=toy, state=None, affordances=['transferable', 'playable', 'discardable']
+- trash_bin: type=container, state=None, affordances=[]
+- Robo: type=Robo, state=None, affordances=[]
+- low_bookshelf: type=furniture, state=None, affordances=[]
+- duck_toy: type=toy, state=None, affordances=['playable', 'transferable']
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (paper_boat) --in_or_on--> (living_room)
+- (duck_toy) --in_or_on--> (low_bookshelf)
+- (low_bookshelf) --in_or_on--> (living_room)
+- (trash_bin) --in_or_on--> (living_room)
+
+Matched Object Knowledge:
+- (paper_boat) --can_be_discarded_in--> (trash_bin)
+- (paper_boat) --can_be_arranged_in--> (low_bookshelf)
+
+05-19-17-31-17
+{
+  "Robo_intention": "Robo is pointing at the paper_boat and the trash_bin and likely wants the paper_boat discarded in the trash_bin.",
+  "Roco_action": [
+    "walk_to paper_boat",
+    "take paper_boat from living_room",
+    "walk_to trash_bin",
+    "put paper_boat trash_bin"
+  ]
+}
+05-19-17-31-17
+succeed

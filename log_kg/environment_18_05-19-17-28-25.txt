@@ -1,0 +1,72 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: []
+recent_interaction_objects: ['table', 'wine_glass', 'guest_1']
+state_changes: []
+
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None, affordances=[]
+- table: type=furniture, state=None, affordances=[]
+- wine_glass: type=container, state=empty, affordances=['contain_wine', 'serve_wine']
+- wine: type=drink, state=None, affordances=['drinkable']
+- dishwasher_sink: type=container, state=None, affordances=[]
+- kitchen_table: type=furniture, state=None, affordances=[]
+- water_cup: type=container, state=empty, affordances=[]
+- refrigerator: type=appliance, state=closed, affordances=['store_food', 'keep_cold', 'openable']
+- cola_bottle: type=disposable_container, state=full, affordances=['transferable', 'discardable']
+- drawer: type=furniture, state=closed, affordances=['store_small_objects']
+- microwave_oven: type=appliance, state=closed, affordances=['openable', 'closeable']
+- pot: type=container, state=None, affordances=['contain_food', 'cook_food', 'transferable', 'needs_stirring_when_on_stove', 'needs_bowl_and_spoon_when_done']
+- oat: type=breakfast_food, state=None, affordances=['edible', 'as_breakfast', 'transferable', 'serving_ready', 'storable']
+- bowl: type=container, state=empty, affordances=['contain_food', 'serve_food', 'transferable', 'storable']
+- milk: type=drink, state=None, affordances=['drinkable']
+- cola: type=drink, state=None, affordances=['drinkable']
+- jam: type=food, state=None, affordances=['transferable', 'storable']
+- wine_bottle: type=container, state=full, affordances=['pourable', 'transferable', 'discardable']
+- living_room: type=room, state=None, affordances=[]
+- coffee_table: type=furniture, state=None, affordances=[]
+- kitchen: type=room, state=None, affordances=[]
+- wine_cabinet: type=furniture, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (coffee_table) --in_or_on--> (living_room)
+- (wine_cabinet) --in_or_on--> (living_room)
+- (wine_bottle) --in_or_on--> (wine_cabinet)
+- (wine) --in_or_on--> (wine_bottle)
+- (table) --in_or_on--> (living_room)
+- (wine_glass) --in_or_on--> (table)
+- (water_cup) --in_or_on--> (coffee_table)
+- (refrigerator) --in_or_on--> (kitchen)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola) --in_or_on--> (cola_bottle)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (pot) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+- (milk) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+
+Matched Object Knowledge:
+- (wine_glass) --implies_preparation_for--> (wine)
+- (wine_glass) --can_be_cleaned_in--> (dishwasher_sink)
+- (wine_glass) --can_be_stored_in--> (kitchen_table)
+- (wine) --can_be_poured_into--> (cup)
+- (wine) --can_be_stored_in--> (refrigerator)
+
+05-19-17-29-03
+{
+  "Robo_intention": "Robo intends to serve wine to the person at the table: the wine_glass on the table is empty and Robo likely wants wine poured into it.",
+  "Roco_action": [
+    "walk_to wine_cabinet",
+    "take wine_bottle from wine_cabinet",
+    "walk_to table",
+    "pour wine_bottle wine_glass 150ml",
+    "put wine_bottle table"
+  ]
+}
+05-19-17-29-03
+succeed

@@ -1,0 +1,56 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: []
+recent_interaction_objects: ['bowl', 'kitchen_table']
+state_changes: [['bowl', 'in_or_on', 'kitchen_table']]
+
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None, affordances=[]
+- bowl: type=container, state=full, affordances=['contain_food', 'serve_food', 'transferable', 'storable']
+- kitchen_table: type=furniture, state=None, affordances=[]
+- cookie: type=food, state=None, affordances=[]
+- jam: type=food, state=None, affordances=['transferable', 'storable']
+- dishwasher_sink: type=container, state=None, affordances=[]
+- microwave_oven: type=appliance, state=opened, affordances=['openable', 'closeable']
+- drawer: type=furniture, state=closed, affordances=['store_small_objects']
+- pot: type=container, state=None, affordances=['contain_food', 'cook_food', 'transferable', 'needs_stirring_when_on_stove', 'needs_bowl_and_spoon_when_done']
+- oat: type=breakfast_food, state=None, affordances=['edible', 'as_breakfast', 'transferable', 'serving_ready', 'storable']
+- coffee_table: type=furniture, state=None, affordances=[]
+- kitchen: type=room, state=None, affordances=[]
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (coffee_table) --in_or_on--> (living_room)
+- (cookie) --in_or_on--> (coffee_table)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (pot) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+
+Matched Object Knowledge:
+- (bowl) --compatible_with--> (food)
+- (bowl) --can_be_cleaned_in--> (dishwasher_sink)
+- (bowl) --can_be_stored_in--> (kitchen_table)
+- (bowl) --can_be_heated_in--> (microwave_oven)
+- (jam) --can_be_stored_in--> (drawer)
+- (drawer) --can_store--> (jam)
+- (drawer) --can_store--> (cookie)
+
+05-19-17-30-30
+{
+  "Robo_intention": "Robo placed a full bowl on the kitchen_table and the microwave_oven is open. Robo intends to heat the bowl in the microwave.",
+  "Roco_action": [
+    "walk_to kitchen_table",
+    "take bowl from kitchen_table",
+    "walk_to microwave_oven",
+    "put bowl microwave_oven",
+    "close microwave_oven"
+  ]
+}
+05-19-17-30-30
+succeed

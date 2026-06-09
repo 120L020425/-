@@ -1,0 +1,34 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['parcel']
+recent_interaction_objects: ['parcel']
+state_changes: []
+
+Subgraph Object Summaries:
+- parcel: type=object, state=closed, affordances=['transferable', 'knife_openable']
+- Robo: type=Robo, state=None, affordances=[]
+- knife: type=object, state=None, affordances=[]
+- cabinet_table: type=furniture, state=None, affordances=[]
+- corridor: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (parcel) --in_or_on--> (corridor)
+- (knife) --in_or_on--> (cabinet_table)
+- (cabinet_table) --in_or_on--> (corridor)
+
+Matched Object Knowledge:
+- (parcel) --can_be_opened_by--> (knife)
+
+05-19-18-05-41
+{
+  "Robo_intention": "Robo is pointing at the closed parcel in the corridor and intends to open it using the knife on the cabinet_table.",
+  "Roco_action": [
+    "walk_to cabinet_table",
+    "take knife from cabinet_table",
+    "walk_to Robo",
+    "put knife Robo"
+  ]
+}
+05-19-18-05-41
+succeed

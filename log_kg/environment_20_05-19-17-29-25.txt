@@ -1,0 +1,46 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['cola_bottle', 'refrigerator']
+recent_interaction_objects: ['cola_bottle', 'dining_table', 'refrigerator']
+state_changes: []
+
+Subgraph Object Summaries:
+- cola_bottle: type=disposable_container, state=full, affordances=['transferable', 'discardable']
+- refrigerator: type=appliance, state=closed, affordances=['store_food', 'keep_cold', 'openable']
+- Robo: type=Robo, state=None, affordances=[]
+- dining_table: type=furniture, state=None, affordances=[]
+- cola: type=drink, state=None, affordances=['drinkable']
+- fruit_plate: type=container, state=filled, affordances=['contain_fruit', 'serve_fruit']
+- orange: type=fruit, state=None, affordances=[]
+- apple: type=fruit, state=None, affordances=[]
+- kitchen: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (refrigerator) --in_or_on--> (kitchen)
+- (cola_bottle) --in_or_on--> (dining_table)
+- (cola) --in_or_on--> (cola_bottle)
+- (dining_table) --in_or_on--> (kitchen)
+- (orange) --in_or_on--> (fruit_plate)
+- (apple) --in_or_on--> (fruit_plate)
+- (fruit_plate) --in_or_on--> (dining_table)
+
+Matched Object Knowledge:
+- (cola_bottle) --can_be_discarded_in--> (trash_bin)
+- (cola_bottle) --can_be_stored_in--> (refrigerator)
+
+05-19-17-29-38
+{
+  "Robo_intention": "Robo intends to store the full cola_bottle from the dining_table into the refrigerator.",
+  "Roco_action": [
+    "walk_to refrigerator",
+    "open refrigerator",
+    "walk_to dining_table",
+    "take cola_bottle from dining_table",
+    "walk_to refrigerator",
+    "put cola_bottle refrigerator",
+    "close refrigerator"
+  ]
+}
+05-19-17-29-38
+succeed

@@ -1,0 +1,47 @@
+Human Cues:
+human_name: Robo
+human_holding: wine
+pointing_target: ['refrigerator']
+recent_interaction_objects: ['wine', 'refrigerator']
+state_changes: []
+
+Subgraph Object Summaries:
+- wine: type=drink, state=None, affordances=['drinkable']
+- refrigerator: type=appliance, state=closed, affordances=['store_food', 'keep_cold', 'openable']
+- Robo: type=Robo, state=None, affordances=[]
+- water_cup: type=container, state=full, affordances=[]
+- water: type=drink, state=None, affordances=['drinkable']
+- cola_bottle: type=disposable_container, state=full, affordances=['transferable', 'discardable']
+- cola: type=drink, state=None, affordances=['drinkable']
+- table: type=furniture, state=None, affordances=[]
+- kitchen: type=room, state=None, affordances=[]
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (wine) --in_or_on--> (Robo)
+- (refrigerator) --in_or_on--> (kitchen)
+- (water_cup) --in_or_on--> (table)
+- (water) --in_or_on--> (water_cup)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola) --in_or_on--> (cola_bottle)
+- (table) --in_or_on--> (living_room)
+
+Matched Object Knowledge:
+- (wine) --can_be_poured_into--> (cup)
+- (wine) --can_be_stored_in--> (refrigerator)
+
+05-19-17-56-18
+{
+  "Robo_intention": "Robo intends to store the wine in the refrigerator.",
+  "Roco_action": [
+    "walk_to refrigerator",
+    "open refrigerator",
+    "walk_to Robo",
+    "take wine from Robo",
+    "walk_to refrigerator",
+    "put wine refrigerator",
+    "close refrigerator"
+  ]
+}
+05-19-17-56-18
+succeed

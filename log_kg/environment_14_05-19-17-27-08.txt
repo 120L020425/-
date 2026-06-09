@@ -1,0 +1,32 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['cookie']
+recent_interaction_objects: ['coffee_table', 'cookie']
+state_changes: []
+
+Subgraph Object Summaries:
+- cookie: type=food, state=None, affordances=[]
+- Robo: type=Robo, state=None, affordances=[]
+- coffee_table: type=furniture, state=None, affordances=[]
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (coffee_table) --in_or_on--> (living_room)
+- (cookie) --in_or_on--> (coffee_table)
+
+Matched Object Knowledge:
+- None
+
+05-19-17-27-15
+{
+  "Robo_intention": "Robo is pointing at the cookie on the coffee_table and likely wants the cookie to be handed to him to eat.",
+  "Roco_action": [
+    "walk_to coffee_table",
+    "take cookie from coffee_table",
+    "walk_to Robo",
+    "put cookie Robo"
+  ]
+}
+05-19-17-27-15
+succeed

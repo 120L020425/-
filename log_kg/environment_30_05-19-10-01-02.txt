@@ -1,0 +1,32 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['water_bottle']
+recent_interaction_objects: ['coffee_table', 'water_bottle']
+state_changes: []
+
+Subgraph Object Summaries:
+- water_bottle: type=container, state=full, affordances=[]
+- Robo: type=Robo, state=None, affordances=[]
+- coffee_table: type=furniture, state=None, affordances=[]
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (coffee_table) --in_or_on--> (living_room)
+- (water_bottle) --in_or_on--> (coffee_table)
+
+Matched Object Knowledge:
+- None
+
+05-19-10-01-11
+{
+  "Robo_intention": "Robo is pointing at the full water_bottle on the coffee_table and waiting; Robo likely wants the bottle handed over for use (to drink).",
+  "Roco_action": [
+    "walk_to coffee_table",
+    "take water_bottle from coffee_table",
+    "walk_to Robo",
+    "put water_bottle Robo"
+  ]
+}
+05-19-10-01-11
+succeed

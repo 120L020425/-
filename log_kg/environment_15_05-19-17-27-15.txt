@@ -1,0 +1,38 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['duck_toy', 'bookshelf']
+recent_interaction_objects: ['duck_toy', 'bookshelf']
+state_changes: []
+
+Subgraph Object Summaries:
+- bookshelf: type=furniture, state=None, affordances=['store_books']
+- duck_toy: type=toy, state=None, affordances=['playable', 'transferable']
+- Robo: type=Robo, state=None, affordances=[]
+- low_bookshelf: type=furniture, state=None, affordances=[]
+- book: type=book, state=None, affordances=['transferable', 'storable']
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (duck_toy) --in_or_on--> (living_room)
+- (low_bookshelf) --in_or_on--> (living_room)
+- (bookshelf) --in_or_on--> (living_room)
+- (book) --in_or_on--> (bookshelf)
+
+Matched Object Knowledge:
+- (bookshelf) --can_store--> (book)
+- (duck_toy) --can_be_arranged_in--> (low_bookshelf)
+- (book) --can_be_stored_in--> (bookshelf)
+
+05-19-17-27-32
+{
+  "Robo_intention": "Robo is pointing at the duck_toy and the bookshelf; Robo likely wants the duck_toy picked up and placed on the low_bookshelf (store the toy).",
+  "Roco_action": [
+    "walk_to duck_toy",
+    "take duck_toy from living_room",
+    "walk_to low_bookshelf",
+    "put duck_toy low_bookshelf"
+  ]
+}
+05-19-17-27-32
+succeed

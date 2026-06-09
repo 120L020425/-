@@ -1,0 +1,72 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['pot_1', 'oat']
+recent_interaction_objects: ['pot_1', 'stove', 'oat']
+state_changes: [['pot_1', 'in_or_on', 'stove']]
+
+Subgraph Object Summaries:
+- oat: type=breakfast_food, state=None, affordances=['edible', 'as_breakfast', 'transferable', 'serving_ready', 'storable']
+- pot_1: type=container, state=full, affordances=['contain_food', 'cook_food', 'transferable', 'needs_stirring_when_on_stove', 'needs_bowl_and_spoon_when_done']
+- Robo: type=Robo, state=None, affordances=[]
+- stove: type=furniture, state=running, affordances=['heat_container', 'support_cooking']
+- jam: type=food, state=None, affordances=['transferable', 'storable']
+- spoon: type=object, state=None, affordances=['stir', 'scoop', 'transferable']
+- bowl: type=container, state=empty, affordances=['contain_food', 'serve_food', 'transferable', 'storable']
+- dishwasher_sink: type=container, state=None, affordances=[]
+- kitchen_table: type=furniture, state=None, affordances=[]
+- microwave_oven: type=appliance, state=closed, affordances=['openable', 'closeable']
+- pot_2: type=container, state=empty, affordances=['contain_food', 'cook_food', 'transferable', 'needs_stirring_when_on_stove', 'needs_bowl_and_spoon_when_done']
+- drawer: type=furniture, state=closed, affordances=['store_small_objects']
+- kitchen: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (kitchen_table) --in_or_on--> (kitchen)
+- (stove) --in_or_on--> (kitchen_table)
+- (pot_2) --in_or_on--> (kitchen_table)
+- (spoon) --in_or_on--> (pot_2)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+- (pot_1) --in_or_on--> (stove)
+
+Matched Object Knowledge:
+- (oat) --can_be_placed_in--> (bowl)
+- (oat) --can_be_placed_in--> (pot)
+- (oat) --can_be_poured_on--> (milk)
+- (oat) --can_be_placed_on--> (kitchen_table)
+- (pot_1) --compatible_with--> (food)
+- (pot_1) --needs_spoon_to_stir_when_stove_running--> (spoon)
+- (pot_1) --needs_bowl_to_serve_when_stove_closed--> (bowl)
+- (pot_1) --can_be_cleaned_in--> (dishwasher_sink)
+- (pot_1) --can_be_placed_on--> (kitchen_table)
+- (pot_1) --can_be_heated_in--> (microwave_oven)
+- (jam) --can_be_stored_in--> (drawer)
+- (bowl) --compatible_with--> (food)
+- (bowl) --can_be_cleaned_in--> (dishwasher_sink)
+- (bowl) --can_be_stored_in--> (kitchen_table)
+- (bowl) --can_be_heated_in--> (microwave_oven)
+- (pot_2) --compatible_with--> (food)
+- (pot_2) --needs_spoon_to_stir_when_stove_running--> (spoon)
+- (pot_2) --needs_bowl_to_serve_when_stove_closed--> (bowl)
+- (pot_2) --can_be_cleaned_in--> (dishwasher_sink)
+- (pot_2) --can_be_placed_on--> (kitchen_table)
+- (pot_2) --can_be_heated_in--> (microwave_oven)
+- (drawer) --can_store--> (jam)
+- (drawer) --can_store--> (cookie)
+
+05-19-17-20-42
+{
+  "Robo_intention": "Robo is cooking oats: pot_1 is on the running stove and Robo is interacting with the oat box. Robo likely needs a spoon to stir the pot.",
+  "Roco_action": [
+    "walk_to kitchen_table",
+    "take spoon from pot_2",
+    "walk_to Robo",
+    "put spoon Robo"
+  ]
+}
+05-19-17-20-42
+succeed

@@ -1,0 +1,75 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['cup_1', 'cup_2', 'guest_1', 'guest_2', 'table']
+recent_interaction_objects: ['cup_1', 'cup_2', 'table', 'guest_1', 'guest_2']
+state_changes: [['cup_1', 'in_or_on', 'table'], ['cup_2', 'in_or_on', 'table']]
+
+Subgraph Object Summaries:
+- cup_1: type=container, state=full, affordances=['contain_liquid', 'serve_drink']
+- cup_2: type=container, state=full, affordances=['contain_liquid', 'serve_drink']
+- guest_1: type=people, state=None, affordances=[]
+- guest_2: type=people, state=None, affordances=[]
+- table: type=furniture, state=None, affordances=[]
+- Robo: type=Robo, state=None, affordances=[]
+- bowl_1: type=container, state=full, affordances=['contain_food', 'serve_food', 'transferable', 'storable']
+- refrigerator: type=appliance, state=closed, affordances=['store_food', 'keep_cold', 'openable']
+- bowl_2: type=container, state=full, affordances=['contain_food', 'serve_food', 'transferable', 'storable']
+- water_cup: type=container, state=full, affordances=[]
+- water: type=drink, state=None, affordances=['drinkable']
+- kitchen: type=room, state=None, affordances=[]
+- apple: type=fruit, state=None, affordances=[]
+- orange: type=fruit, state=None, affordances=[]
+- kettle: type=container, state=full, affordances=[]
+- cola_bottle: type=disposable_container, state=full, affordances=['transferable', 'discardable']
+- cola: type=drink, state=None, affordances=['drinkable']
+- coffee_table: type=furniture, state=None, affordances=[]
+- fruit_plate: type=container, state=filled, affordances=['contain_fruit', 'serve_fruit']
+- wine: type=drinks, state=None, affordances=['drinkable']
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (coffee_table) --in_or_on--> (living_room)
+- (water_cup) --in_or_on--> (coffee_table)
+- (kettle) --in_or_on--> (coffee_table)
+- (water) --in_or_on--> (water_cup)
+- (water) --in_or_on--> (kettle)
+- (table) --in_or_on--> (living_room)
+- (guest_1) --in_or_on--> (living_room)
+- (guest_2) --in_or_on--> (living_room)
+- (orange) --in_or_on--> (fruit_plate)
+- (apple) --in_or_on--> (fruit_plate)
+- (fruit_plate) --in_or_on--> (table)
+- (bowl_1) --in_or_on--> (table)
+- (bowl_2) --in_or_on--> (table)
+- (refrigerator) --in_or_on--> (kitchen)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola) --in_or_on--> (cola_bottle)
+- (wine) --in_or_on--> (refrigerator)
+- (cup_1) --in_or_on--> (table)
+- (cup_2) --in_or_on--> (table)
+
+Matched Object Knowledge:
+- (cup_1) --compatible_with--> (drink)
+- (cup_2) --compatible_with--> (drink)
+- (water) --can_be_poured_into--> (cup)
+- (water) --can_be_stored_in--> (refrigerator)
+- (cola) --can_be_poured_into--> (cup)
+- (cola) --can_be_stored_in--> (refrigerator)
+
+05-19-10-01-02
+{
+  "Robo_intention": "Robo placed two full cups on the table and is pointing at the cups and the guests. Robo likely wants the cups served to the two guests.",
+  "Roco_action": [
+    "walk_to table",
+    "take cup_1 from table",
+    "walk_to guest_1",
+    "put cup_1 guest_1",
+    "walk_to table",
+    "take cup_2 from table",
+    "walk_to guest_2",
+    "put cup_2 guest_2"
+  ]
+}
+05-19-10-01-02
+succeed

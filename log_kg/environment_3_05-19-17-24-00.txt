@@ -1,0 +1,44 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['laptop', 'book']
+recent_interaction_objects: ['table', 'laptop', 'book']
+state_changes: [['laptop', 'state', 'closed']]
+
+Subgraph Object Summaries:
+- book: type=book, state=None, affordances=['transferable', 'storable']
+- laptop: type=device, state=closed, affordances=['openable', 'closable', 'usable_for_work']
+- Robo: type=Robo, state=None, affordances=[]
+- table: type=furniture, state=None, affordances=[]
+- bookshelf: type=furniture, state=None, affordances=['store_books']
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (table) --in_or_on--> (living_room)
+- (bookshelf) --in_or_on--> (living_room)
+- (book) --in_or_on--> (table)
+- (laptop) --in_or_on--> (table)
+
+Matched Object Knowledge:
+- (book) --can_be_stored_in--> (bookshelf)
+- (bookshelf) --can_store--> (book)
+
+05-19-17-24-19
+{
+  "Robo_intention": "Robo has just closed the laptop and is pointing at the books on the table; Robo intends to store the books on the bookshelf.",
+  "Roco_action": [
+    "walk_to table",
+    "take book from table",
+    "put book bookshelf",
+    "take book from table",
+    "put book bookshelf",
+    "take book from table",
+    "put book bookshelf",
+    "take book from table",
+    "put book bookshelf",
+    "take book from table",
+    "put book bookshelf"
+  ]
+}
+05-19-17-24-19
+succeed

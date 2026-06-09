@@ -1,0 +1,40 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: []
+recent_interaction_objects: ['table', 'cola_bottle', 'guest_1']
+state_changes: []
+
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None, affordances=[]
+- cola_bottle: type=disposable_container, state=empty, affordances=['transferable', 'discardable']
+- table: type=furniture, state=None, affordances=[]
+- trash_bin: type=container, state=None, affordances=[]
+- refrigerator: type=furniture, state=closed, affordances=['store_food', 'keep_cold', 'openable']
+- wine: type=drinks, state=None, affordances=['drinkable']
+- living_room: type=room, state=None, affordances=[]
+- kitchen: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (table) --in_or_on--> (living_room)
+- (trash_bin) --in_or_on--> (living_room)
+- (cola_bottle) --in_or_on--> (table)
+- (refrigerator) --in_or_on--> (kitchen)
+- (wine) --in_or_on--> (refrigerator)
+
+Matched Object Knowledge:
+- (cola_bottle) --can_be_discarded_in--> (trash_bin)
+- (cola_bottle) --can_be_stored_in--> (refrigerator)
+
+05-19-17-24-00
+{
+  "Robo_intention": "Robo intends to clean up the empty cola_bottle on the table by discarding it into the trash_bin in the living_room.",
+  "Roco_action": [
+    "walk_to table",
+    "take cola_bottle from table",
+    "walk_to trash_bin",
+    "put cola_bottle trash_bin"
+  ]
+}
+05-19-17-24-00
+succeed

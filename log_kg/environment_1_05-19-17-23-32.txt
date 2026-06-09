@@ -1,0 +1,38 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: ['dining_table']
+recent_interaction_objects: ['fruit_plate', 'dining_table', 'guest_1']
+state_changes: [['fruit_plate', 'in_or_on', 'dining_table'], ['Robo', 'in_or_on', 'kitchen']]
+
+Subgraph Object Summaries:
+- dining_table: type=furniture, state=None, affordances=[]
+- Robo: type=Robo, state=None, affordances=[]
+- fruit_plate: type=container, state=empty, affordances=['contain_fruit', 'serve_fruit']
+- apple: type=fruit, state=None, affordances=[]
+- orange: type=fruit, state=None, affordances=[]
+- kitchen: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (dining_table) --in_or_on--> (kitchen)
+- (orange) --in_or_on--> (dining_table)
+- (apple) --in_or_on--> (dining_table)
+- (fruit_plate) --in_or_on--> (dining_table)
+- (Robo) --in_or_on--> (kitchen)
+
+Matched Object Knowledge:
+- (fruit_plate) --can_store--> (fruit)
+
+05-19-17-23-50
+{
+  "Robo_intention": "Robo is pointing at the dining_table and recently interacted with the fruit_plate placed on the dining_table. Robo intends to have the fruit (orange and apple) placed onto the fruit_plate on the dining_table to serve them.",
+  "Roco_action": [
+    "walk_to dining_table",
+    "take orange from dining_table",
+    "put orange fruit_plate",
+    "take apple from dining_table",
+    "put apple fruit_plate"
+  ]
+}
+05-19-17-23-50
+succeed

@@ -1,0 +1,40 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: []
+recent_interaction_objects: ['table', 'water_cup', 'kettle', 'guest_1']
+state_changes: []
+
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None, affordances=[]
+- kettle: type=container, state=full, affordances=[]
+- table: type=furniture, state=None, affordances=[]
+- water_cup: type=container, state=empty, affordances=[]
+- water: type=drink, state=None, affordances=['drinkable']
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (table) --in_or_on--> (living_room)
+- (water_cup) --in_or_on--> (table)
+- (kettle) --in_or_on--> (table)
+- (water) --in_or_on--> (water_cup)
+- (water) --in_or_on--> (kettle)
+
+Matched Object Knowledge:
+- None
+
+05-19-17-28-09
+{
+  "Robo_intention": "Robo (person in green T-shirt) wants a drink: the kettle on the table is full and the water_cup on the table is empty. Provide a filled water_cup to Robo.",
+  "Roco_action": [
+    "walk_to table",
+    "take kettle from table",
+    "pour kettle water_cup 200ml",
+    "put kettle table",
+    "take water_cup from table",
+    "walk_to Robo",
+    "put water_cup Robo"
+  ]
+}
+05-19-17-28-09
+succeed

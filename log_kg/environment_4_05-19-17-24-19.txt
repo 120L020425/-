@@ -1,0 +1,50 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: []
+recent_interaction_objects: ['tv']
+state_changes: []
+
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None, affordances=[]
+- tv: type=device, state=on, affordances=['display_video', 'guide_activity']
+- water: type=drink, state=None, affordances=['drinkable']
+- water_cup: type=container, state=full, affordances=[]
+- refrigerator: type=appliance, state=closed, affordances=['store_food', 'keep_cold', 'openable']
+- cola_bottle: type=disposable_container, state=full, affordances=['transferable', 'discardable']
+- wine: type=drinks, state=None, affordances=['drinkable']
+- cola: type=drink, state=None, affordances=['drinkable']
+- living_room: type=room, state=None, affordances=[]
+- table: type=furniture, state=None, affordances=[]
+- kettle: type=container, state=full, affordances=[]
+- kitchen: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (tv) --in_or_on--> (living_room)
+- (table) --in_or_on--> (living_room)
+- (water_cup) --in_or_on--> (table)
+- (kettle) --in_or_on--> (table)
+- (water) --in_or_on--> (water_cup)
+- (water) --in_or_on--> (kettle)
+- (refrigerator) --in_or_on--> (kitchen)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola) --in_or_on--> (cola_bottle)
+- (wine) --in_or_on--> (refrigerator)
+
+Matched Object Knowledge:
+- (tv) --compatible_with--> (water)
+- (water) --can_be_poured_into--> (cup)
+- (water) --can_be_stored_in--> (refrigerator)
+
+05-19-17-24-32
+{
+  "Robo_intention": "Robo is exercising while watching the TV and likely needs a drink. He will want the full water_cup on the table to drink.",
+  "Roco_action": [
+    "walk_to table",
+    "take water_cup from table",
+    "walk_to Robo",
+    "put water_cup Robo"
+  ]
+}
+05-19-17-24-32
+succeed

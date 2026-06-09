@@ -1,0 +1,85 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: []
+recent_interaction_objects: ['dining_table', 'bowl', 'oat']
+state_changes: []
+
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None, affordances=[]
+- bowl: type=container, state=dirty, affordances=['contain_food', 'serve_food', 'transferable', 'storable']
+- dining_table: type=furniture, state=None, affordances=[]
+- oat: type=breakfast_food, state=None, affordances=['edible', 'as_breakfast', 'transferable', 'serving_ready', 'storable']
+- pot: type=container, state=None, affordances=['contain_food', 'cook_food', 'transferable', 'needs_stirring_when_on_stove', 'needs_bowl_and_spoon_when_done']
+- milk: type=drink, state=None, affordances=['drinkable']
+- kitchen_table: type=furniture, state=None, affordances=[]
+- jam: type=food, state=None, affordances=['transferable', 'storable']
+- dishwasher_sink: type=container, state=None, affordances=[]
+- microwave_oven: type=appliance, state=closed, affordances=['openable', 'closeable']
+- drawer: type=furniture, state=closed, affordances=['store_small_objects']
+- water_cup: type=container, state=full, affordances=[]
+- refrigerator: type=appliance, state=closed, affordances=['store_food', 'keep_cold', 'openable']
+- water: type=drink, state=None, affordances=['drinkable']
+- cola_bottle: type=disposable_container, state=full, affordances=['transferable', 'discardable']
+- wine: type=drinks, state=None, affordances=['drinkable']
+- cola: type=drink, state=None, affordances=['drinkable']
+- table: type=furniture, state=None, affordances=[]
+- kitchen: type=room, state=None, affordances=[]
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (table) --in_or_on--> (living_room)
+- (water_cup) --in_or_on--> (table)
+- (water) --in_or_on--> (water_cup)
+- (refrigerator) --in_or_on--> (kitchen)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola) --in_or_on--> (cola_bottle)
+- (dining_table) --in_or_on--> (kitchen)
+- (wine) --in_or_on--> (refrigerator)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (pot) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (dining_table)
+- (bowl) --in_or_on--> (dining_table)
+- (milk) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+
+Matched Object Knowledge:
+- (bowl) --compatible_with--> (food)
+- (bowl) --can_be_cleaned_in--> (dishwasher_sink)
+- (bowl) --can_be_stored_in--> (kitchen_table)
+- (bowl) --can_be_heated_in--> (microwave_oven)
+- (oat) --can_be_placed_in--> (bowl)
+- (oat) --can_be_placed_in--> (pot)
+- (oat) --can_be_poured_on--> (milk)
+- (oat) --can_be_placed_on--> (kitchen_table)
+- (pot) --compatible_with--> (food)
+- (pot) --needs_spoon_to_stir_when_stove_running--> (spoon)
+- (pot) --needs_bowl_to_serve_when_stove_closed--> (bowl)
+- (pot) --can_be_cleaned_in--> (dishwasher_sink)
+- (pot) --can_be_placed_on--> (kitchen_table)
+- (pot) --can_be_heated_in--> (microwave_oven)
+- (milk) --can_be_poured_into--> (cup)
+- (milk) --can_be_stored_in--> (refrigerator)
+- (jam) --can_be_stored_in--> (drawer)
+- (drawer) --can_store--> (jam)
+- (drawer) --can_store--> (cookie)
+
+05-19-17-25-13
+{
+  "Robo_intention": "Robo has left the dining table leaving a dirty bowl and oat on the dining_table. Robo likely intends the table cleared and the bowl taken for cleaning and the oat put away.",
+  "Roco_action": [
+    "walk_to dining_table",
+    "take bowl from dining_table",
+    "walk_to dishwasher_sink",
+    "put bowl dishwasher_sink",
+    "walk_to dining_table",
+    "take oat from dining_table",
+    "walk_to kitchen_table",
+    "put oat kitchen_table"
+  ]
+}
+05-19-17-25-13
+succeed

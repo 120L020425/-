@@ -1,0 +1,44 @@
+Human Cues:
+human_name: Robo
+human_holding: jam
+pointing_target: ['drawer']
+recent_interaction_objects: ['jam', 'drawer']
+state_changes: [['jam', 'in_or_on', 'Robo']]
+
+Subgraph Object Summaries:
+- jam: type=food, state=None, affordances=['transferable', 'storable']
+- drawer: type=furniture, state=closed, affordances=['store_small_objects']
+- Robo: type=Robo, state=None, affordances=[]
+- cookie: type=food, state=None, affordances=[]
+- coffee_table: type=furniture, state=None, affordances=[]
+- kitchen_table: type=furniture, state=None, affordances=[]
+- living_room: type=room, state=None, affordances=[]
+- kitchen: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (coffee_table) --in_or_on--> (living_room)
+- (cookie) --in_or_on--> (coffee_table)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (Robo)
+
+Matched Object Knowledge:
+- (jam) --can_be_stored_in--> (drawer)
+- (drawer) --can_store--> (jam)
+- (drawer) --can_store--> (cookie)
+
+05-19-17-29-52
+{
+  "Robo_intention": "Robo is holding the jar of jam and pointing at the closed drawer on the kitchen table. Robo intends to store the jam in the drawer.",
+  "Roco_action": [
+    "walk_to drawer",
+    "open drawer",
+    "walk_to Robo",
+    "take jam from Robo",
+    "walk_to drawer",
+    "put jam drawer",
+    "close drawer"
+  ]
+}
+05-19-17-29-52
+succeed

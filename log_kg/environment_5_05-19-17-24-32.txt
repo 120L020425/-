@@ -1,0 +1,78 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: []
+recent_interaction_objects: ['bed']
+state_changes: []
+
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None, affordances=[]
+- bed: type=furniture, state=None, affordances=['support_sleep', 'resting']
+- oat: type=breakfast_food, state=None, affordances=['edible', 'as_breakfast', 'transferable', 'serving_ready', 'storable']
+- bowl: type=container, state=empty, affordances=['contain_food', 'serve_food', 'transferable', 'storable']
+- pot: type=container, state=None, affordances=['contain_food', 'cook_food', 'transferable', 'needs_stirring_when_on_stove', 'needs_bowl_and_spoon_when_done']
+- milk: type=drink, state=None, affordances=['drinkable']
+- kitchen_table: type=furniture, state=None, affordances=[]
+- drawer: type=furniture, state=closed, affordances=['store_small_objects']
+- microwave_oven: type=appliance, state=closed, affordances=['openable', 'closeable']
+- dishwasher_sink: type=container, state=None, affordances=[]
+- jam: type=food, state=None, affordances=['transferable', 'storable']
+- kitchen: type=room, state=None, affordances=[]
+- refrigerator: type=appliance, state=closed, affordances=['store_food', 'keep_cold', 'openable']
+- bed_room: type=room, state=None, affordances=['support_sleep', 'resting']
+
+Subgraph Scene Relations:
+- (refrigerator) --in_or_on--> (kitchen)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (pot) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+- (milk) --in_or_on--> (refrigerator)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+- (bed) --in_or_on--> (bed_room)
+
+Matched Object Knowledge:
+- (bed) --compatible_with--> (breakfast_food)
+- (oat) --can_be_placed_in--> (bowl)
+- (oat) --can_be_placed_in--> (pot)
+- (oat) --can_be_poured_on--> (milk)
+- (oat) --can_be_placed_on--> (kitchen_table)
+- (bowl) --compatible_with--> (food)
+- (bowl) --can_be_cleaned_in--> (dishwasher_sink)
+- (bowl) --can_be_stored_in--> (kitchen_table)
+- (bowl) --can_be_heated_in--> (microwave_oven)
+- (pot) --compatible_with--> (food)
+- (pot) --needs_spoon_to_stir_when_stove_running--> (spoon)
+- (pot) --needs_bowl_to_serve_when_stove_closed--> (bowl)
+- (pot) --can_be_cleaned_in--> (dishwasher_sink)
+- (pot) --can_be_placed_on--> (kitchen_table)
+- (pot) --can_be_heated_in--> (microwave_oven)
+- (milk) --can_be_poured_into--> (cup)
+- (milk) --can_be_stored_in--> (refrigerator)
+
+05-19-17-24-53
+{
+  "Robo_intention": "Robo is lying on the bed and likely wants breakfast — a bowl of oats with milk — brought to the bed.",
+  "Roco_action": [
+    "walk_to kitchen_table",
+    "take oat from kitchen_table",
+    "put oat bowl",
+    "walk_to refrigerator",
+    "open refrigerator",
+    "take milk from refrigerator",
+    "walk_to kitchen_table",
+    "pour milk bowl 200ml",
+    "walk_to refrigerator",
+    "put milk refrigerator",
+    "close refrigerator",
+    "walk_to kitchen_table",
+    "take bowl from kitchen_table",
+    "walk_to Robo",
+    "put bowl Robo"
+  ]
+}
+05-19-17-24-53
+succeed

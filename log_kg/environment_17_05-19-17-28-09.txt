@@ -1,0 +1,34 @@
+Human Cues:
+human_name: Robo
+human_holding: None
+pointing_target: []
+recent_interaction_objects: ['coffee_table', 'fruit_plate', 'apple', 'guest_1']
+state_changes: []
+
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None, affordances=[]
+- apple: type=fruit, state=None, affordances=[]
+- coffee_table: type=furniture, state=None, affordances=[]
+- fruit_plate: type=container, state=filled, affordances=['contain_fruit', 'serve_fruit']
+- living_room: type=room, state=None, affordances=[]
+
+Subgraph Scene Relations:
+- (coffee_table) --in_or_on--> (living_room)
+- (apple) --in_or_on--> (fruit_plate)
+- (fruit_plate) --in_or_on--> (coffee_table)
+
+Matched Object Knowledge:
+- (fruit_plate) --can_store--> (fruit)
+
+05-19-17-28-25
+{
+  "Robo_intention": "Robo intends to offer an apple from the fruit_plate on the coffee_table to guest_1.",
+  "Roco_action": [
+    "walk_to coffee_table",
+    "take apple from fruit_plate",
+    "walk_to guest_1",
+    "put apple guest_1"
+  ]
+}
+05-19-17-28-25
+succeed
