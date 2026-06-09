@@ -1,0 +1,141 @@
+Subgraph Object Summaries:
+- Robo: type=Robo, state=None, affordances=[]
+- corridor: type=room, state=None, affordances=[]
+- cabinet_table: type=furniture, state=None, affordances=[]
+- cabinet_drawer: type=furniture, state=closed, affordances=[]
+- knife: type=object, state=None, affordances=[]
+- door: type=furniture, state=closed, affordances=['openable', 'closable', 'blocks_passage_when_closed']
+- living_room: type=room, state=None, affordances=[]
+- tv: type=device, state=closed, affordances=['display_video', 'guide_activity']
+- coffee_table: type=furniture, state=None, affordances=[]
+- duck_toy: type=toy, state=None, affordances=['playable', 'transferable']
+- low_bookshelf: type=furniture, state=None, affordances=[]
+- bookshelf: type=furniture, state=None, affordances=['store_books']
+- book: type=book, state=None, affordances=['transferable', 'storable']
+- trash_can: type=container, state=None, affordances=[]
+- table: type=furniture, state=None, affordances=[]
+- water_cup: type=container, state=full, affordances=[]
+- kettle: type=container, state=full, affordances=[]
+- water: type=drink, state=None, affordances=['drinkable']
+- kitchen: type=room, state=None, affordances=[]
+- refrigerator: type=appliance, state=closed, affordances=['store_food', 'keep_cold', 'openable']
+- cola_bottle: type=disposable_container, state=full, affordances=['transferable', 'discardable']
+- cola: type=drink, state=None, affordances=['drinkable']
+- dining_table: type=furniture, state=None, affordances=[]
+- orange: type=fruit, state=None, affordances=[]
+- apple: type=fruit, state=None, affordances=[]
+- fruit_plate: type=container, state=filled, affordances=['contain_fruit', 'serve_fruit']
+- wine: type=drinks, state=None, affordances=['drinkable']
+- kitchen_table: type=furniture, state=None, affordances=[]
+- stove: type=furniture, state=running, affordances=['heat_container', 'support_cooking']
+- pot_1: type=container, state=full, affordances=['contain_food', 'cook_food', 'transferable', 'needs_stirring_when_on_stove', 'needs_bowl_and_spoon_when_done']
+- pot_2: type=container, state=empty, affordances=['contain_food', 'cook_food', 'transferable', 'needs_stirring_when_on_stove', 'needs_bowl_and_spoon_when_done']
+- spoon: type=object, state=None, affordances=['stir', 'scoop', 'transferable']
+- drawer: type=furniture, state=closed, affordances=['store_small_objects']
+- jam: type=food, state=None, affordances=['transferable', 'storable']
+- microwave_oven: type=appliance, state=closed, affordances=['openable', 'closeable']
+- oat: type=breakfast_food, state=None, affordances=['edible', 'as_breakfast', 'transferable', 'serving_ready', 'storable']
+- bowl: type=container, state=empty, affordances=['contain_food', 'serve_food', 'transferable', 'storable']
+- dishwasher_sink: type=container, state=None, affordances=[]
+- bed_room: type=room, state=None, affordances=['support_sleep', 'resting']
+- bed: type=furniture, state=None, affordances=['support_sleep', 'resting']
+
+Subgraph Scene Relations:
+- (cabinet_table) --in_or_on--> (corridor)
+- (cabinet_drawer) --in_or_on--> (cabinet_table)
+- (knife) --in_or_on--> (cabinet_table)
+- (door) --in_or_on--> (corridor)
+- (tv) --in_or_on--> (living_room)
+- (coffee_table) --in_or_on--> (living_room)
+- (duck_toy) --in_or_on--> (low_bookshelf)
+- (low_bookshelf) --in_or_on--> (living_room)
+- (bookshelf) --in_or_on--> (living_room)
+- (book) --in_or_on--> (bookshelf)
+- (trash_can) --in_or_on--> (living_room)
+- (table) --in_or_on--> (living_room)
+- (water_cup) --in_or_on--> (table)
+- (kettle) --in_or_on--> (table)
+- (water) --in_or_on--> (water_cup)
+- (water) --in_or_on--> (kettle)
+- (refrigerator) --in_or_on--> (kitchen)
+- (cola_bottle) --in_or_on--> (refrigerator)
+- (cola) --in_or_on--> (cola_bottle)
+- (dining_table) --in_or_on--> (kitchen)
+- (orange) --in_or_on--> (fruit_plate)
+- (apple) --in_or_on--> (fruit_plate)
+- (fruit_plate) --in_or_on--> (dining_table)
+- (wine) --in_or_on--> (refrigerator)
+- (kitchen_table) --in_or_on--> (kitchen)
+- (stove) --in_or_on--> (kitchen_table)
+- (pot_1) --in_or_on--> (kitchen_table)
+- (pot_2) --in_or_on--> (kitchen_table)
+- (spoon) --in_or_on--> (pot_2)
+- (drawer) --in_or_on--> (kitchen_table)
+- (jam) --in_or_on--> (drawer)
+- (microwave_oven) --in_or_on--> (kitchen_table)
+- (oat) --in_or_on--> (kitchen_table)
+- (bowl) --in_or_on--> (kitchen_table)
+- (dishwasher_sink) --in_or_on--> (kitchen_table)
+- (bed) --in_or_on--> (bed_room)
+
+Matched Object Knowledge:
+- (door) --blocks_passage_when_closed--> (outside_home)
+- (door) --must_be_opened_to_go_to--> (corridor)
+- (tv) --compatible_with--> (water)
+- (duck_toy) --can_be_arranged_in--> (low_bookshelf)
+- (bookshelf) --can_store--> (book)
+- (book) --can_be_stored_in--> (bookshelf)
+- (water) --can_be_poured_into--> (cup)
+- (water) --can_be_stored_in--> (refrigerator)
+- (cola_bottle) --can_be_discarded_in--> (trash_bin)
+- (cola_bottle) --can_be_stored_in--> (refrigerator)
+- (cola) --can_be_poured_into--> (cup)
+- (cola) --can_be_stored_in--> (refrigerator)
+- (fruit_plate) --can_store--> (fruit)
+- (wine) --can_be_poured_into--> (cup)
+- (wine) --can_be_stored_in--> (refrigerator)
+- (pot_1) --compatible_with--> (food)
+- (pot_1) --needs_spoon_to_stir_when_stove_running--> (spoon)
+- (pot_1) --needs_bowl_to_serve_when_stove_closed--> (bowl)
+- (pot_1) --can_be_cleaned_in--> (dishwasher_sink)
+- (pot_1) --can_be_placed_on--> (kitchen_table)
+- (pot_1) --can_be_heated_in--> (microwave_oven)
+- (pot_2) --compatible_with--> (food)
+- (pot_2) --needs_spoon_to_stir_when_stove_running--> (spoon)
+- (pot_2) --needs_bowl_to_serve_when_stove_closed--> (bowl)
+- (pot_2) --can_be_cleaned_in--> (dishwasher_sink)
+- (pot_2) --can_be_placed_on--> (kitchen_table)
+- (pot_2) --can_be_heated_in--> (microwave_oven)
+- (drawer) --can_store--> (jam)
+- (drawer) --can_store--> (cookie)
+- (jam) --can_be_stored_in--> (drawer)
+- (oat) --can_be_placed_in--> (bowl)
+- (oat) --can_be_placed_in--> (pot)
+- (oat) --can_be_poured_on--> (milk)
+- (oat) --can_be_placed_on--> (kitchen_table)
+- (bowl) --compatible_with--> (food)
+- (bowl) --can_be_cleaned_in--> (dishwasher_sink)
+- (bowl) --can_be_stored_in--> (kitchen_table)
+- (bowl) --can_be_heated_in--> (microwave_oven)
+- (bed_room) --compatible_with--> (breakfast_food)
+- (bed) --compatible_with--> (breakfast_food)
+05-19-18-45-38
+{
+  "Robo_intention": "Robo is preparing breakfast: the stove pot (pot_1) is running and needs stirring, and Robo is also arranging/using the oat and bowl to serve. Robo wants a spoon to stir the pot and needs the bowl and oat to serve the food.",
+  "Roco_action": [
+    "walk_to kitchen_table",
+    "take spoon from pot_2",
+    "walk_to Robo",
+    "put spoon Robo",
+    "walk_to kitchen_table",
+    "take bowl from kitchen_table",
+    "walk_to Robo",
+    "put bowl Robo",
+    "walk_to kitchen_table",
+    "take oat from kitchen_table",
+    "walk_to Robo",
+    "put oat Robo"
+  ]
+}
+05-19-18-45-38
+succeed
